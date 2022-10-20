@@ -18,6 +18,7 @@ choco install git
 ```
 * Instalar jdk 8 e 11
 **Sugestão de caminho de instalação:** **c:\DevPrograms\java**
+* Meio mais facil de trocar de versões de JDK
 ```shell
 New-Item -ItemType SymbolicLink -Path "C:\DevPrograms\Java\current" -Target "C:\DevPrograms\Java\jdk11"
 ```
