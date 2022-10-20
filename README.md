@@ -18,7 +18,18 @@ choco install git
 ```
 * Instalar jdk 8 e 11
 **Sugestão de caminho de instalação:** **c:\DevPrograms\java**
+* Configurar as variaveis de ambiente do Java
+  * JAVA_HOME **C:\DevPrograms\Java\jdk11**
 * Meio mais facil de trocar de versões de JDK
 ```shell
 New-Item -ItemType SymbolicLink -Path "C:\DevPrograms\Java\current" -Target "C:\DevPrograms\Java\jdk11"
 ```
+* Para trocar a versão use:
+```shell
+New-Item -ItemType SymbolicLink -Path "C:\DevPrograms\Java\current" -Target "C:\DevPrograms\Java\jdk8" -Force
+```
+* Instalação do android stuido
+* Configurar as variaveis de ambiente
+  * ANDROID_HOME **C:\Users\luizs.araujo\AppData\Local\Android\Sdk**
+  * ANDROID_SKD_ROOT **C:\Users\luizs.araujo\AppData\Local\Android\Sdk**
+* Use o comando: ``` adb``` para verificar se tudo está corretamente instalado.
