@@ -1,4 +1,3 @@
-
 # Academia-do-Flutter
 
 ## Configuração de Ambiente Windows
@@ -13,3 +12,12 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
  ```shell 
 choco
 ``` 
+* Use o comando para instalar o git
+```shell 
+choco install git
+```
+* Instalar jdk 8 e 11
+**Sugestão de caminho de instalação:** **c:\DevPrograms\java**
+```shell
+New-Item -ItemType SymbolicLink -Path "C:\DevPrograms\Java\current" -Target "C:\DevPrograms\Java\jdk11"
+```
