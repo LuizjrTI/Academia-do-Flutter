@@ -32,8 +32,8 @@ New-Item -ItemType SymbolicLink -Path "C:\DevPrograms\Java\current" -Target "C:\
 * Configurar as variaveis de ambiente
   * ANDROID_HOME **C:\Users\luizs.araujo\AppData\Local\Android\Sdk**
   * ANDROID_SKD_ROOT **C:\Users\luizs.araujo\AppData\Local\Android\Sdk**
-* Use o comandopara verificar se tudo está corretamente instalado: 
+* Use o comando : 
 ```cmd 
 adb
 ```
-
+para verificar se tudo está corretamente instalado
