@@ -1,10 +1,6 @@
 # Academia-do-Flutter
 
-  
-
 ## Configuração de Ambiente Windows
-
-  
 
 * [Chocolatey](https://chocolatey.org/install)
 
@@ -95,4 +91,25 @@ fvm global stable
 fvm global 3.0.1
 ```
 
+* Instalando visual studio code
+  * [VSCODE](https://code.visualstudio.com/)
+  * Baixar as Extensões Flutter e Dart
 
+## Dart Fundamentos
+
+* [DartPad](https://dartpad.dev/) IDE online de dart
+
+* Conceitos importantes do dart
+  * Tudo dentro do dart é um objeto.
+
+* Criando o primeiro projeto via terminal
+  * ```fvm dart create -t console-full dart_fundamentos```
+
+* Estrutura de projetos Dart
+  * bin -> contem os arquivos de start da aplicação.
+  * lib -> Onde fica os nossos arquivos
+  * test -> Ficam os arquivos de testes
+  * analysis_options.yaml -> Configura o lint, os padrões de projeto.
+
+  
+  
