@@ -111,5 +111,60 @@ fvm global 3.0.1
   * test -> Ficam os arquivos de testes
   * analysis_options.yaml -> Configura o lint, os padrões de projeto.
 
-  
+### Variáveis
+* Exemplos de variaveis no dart
+
+```dart
+void main() {
+  // inteiros 1,2,3
+  // decimais 1.2 , 1.3
+  // num é o pai de todos
+  num qualquerNumero = 1;
+  num qualquerNumero2 = 2.1;
+  int idade = 10;
+  var idade2 = 11;
+  const palavra = "palavra";
+  double valor = 12.00;
+  String nomeCurso = "Academia do flutter";
+  Object objetoQualquer = 1.2;
+  dynamic dynamicQualquer = 1;
+  dynamicQualquer = "Luiz";
+  dynamicQualquer = 1.2;
+}
+```
+* Uso do Null safety em flutter
+```dart
+//Precisa ser inicializada ou usar o operador ? para permitir valores null
+// Variaveis de nivel superior não podem ser inicializadas depois
+// Não é permitido
+// String nomeCompletoSuperior;
+String? nomeCompletoSuperior;
+
+void main() {
+  /**
+   * Variaveis locais não precisam ser inicializadas de cara porem
+   * pode ser criadas sem valor e depois ser atribuido um valor
+   */
+
+  String? nomeCompleto;
+  nomeCompleto = "Luiz Junior";
+
+  // Variaveis locais que são nulas por padrão
+  // Se fir atribuido um valor a ela, automaticamente elas são
+  // promovidas a null safety non-null
+
+  /**
+   * if (nomeCompleto != null) {
+        print(nomeCompleto.length);
+      }
+   */
+
+  //Variaveis de nivel superior (GLOBAL) NUNCA são promovidas para não Nulo(non-null)
+  nomeCompletoSuperior = '';
+
+  // vc deve sempre evitar sempre o operador "!"
+  //print(nomeCompleto!.length);
+  print(nomeCompleto.length);
+}
+```
   
