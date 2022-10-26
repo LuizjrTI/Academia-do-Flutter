@@ -150,7 +150,7 @@ void main() {
   nomeCompleto = "Luiz Junior";
 
   // Variaveis locais que são nulas por padrão
-  // Se fir atribuido um valor a ela, automaticamente elas são
+  // Se for atribuido um valor a ela, automaticamente elas são
   // promovidas a null safety non-null
 
   /**
