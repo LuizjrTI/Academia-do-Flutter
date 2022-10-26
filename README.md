@@ -198,6 +198,7 @@ void main(List<String> args) {
 
 * Operadores condicionais (**IF**,**ELSE**, **ELSE IF**)
 * Operadores relacionais (**==**, **!=**, **>**,**<**,**>=**,**<=**)
+* Operadores logicos ( **&&**, **||**, **!**)
 
 ```dart
 void main(List<String> args) {
@@ -216,7 +217,7 @@ void main(List<String> args) {
   // != (Diferente)
   // > (Maior que)
   // < (Menor que)
-  //>= (Maior ou igual)
+  // >= (Maior ou igual)
   // <= (Menor ou igual)
 
   final idade = 18;
@@ -232,6 +233,51 @@ void main(List<String> args) {
 
   if (tipoPet != 'Cachorro') {
     print("Desculpe mas não temos nada para seu pet");
+  }
+}
+```
+```dart
+void main(List<String> args) {
+  // Operadores Lógicos
+  // && (e) todas as condições tem que ser verdade
+
+  final sexo = "M";
+  final idade = 27;
+
+  /**
+   * if (sexo == "M") {
+    if (idade >= 18) {
+      print("Pode entrar");
+    } else {
+      print("Não pode entrar");
+    }
+  } else {
+    print("Não pode entrar");
+  }
+   */
+
+  if (sexo == 'M' && idade >= 18) {
+    print("Pode entrar");
+  } else {
+    print("Não pode entrar");
+  }
+
+  // Operador || (ou) um das condições precisam ser verdade
+  if (sexo == 'M' || idade >= 18) {
+    print("Pode entrar");
+  } else {
+    print("Não pode entrar");
+  }
+
+  // ! (não)
+  if (!(sexo == "M" && idade >= 18)) {
+    print("Pode entrar");
+  } else {
+    print("Não pode entrar");
+  }
+
+  if (!(idade >= 18)) {
+    print("É menor de idade");
   }
 }
 ```
