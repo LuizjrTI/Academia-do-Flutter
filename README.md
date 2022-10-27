@@ -298,5 +298,87 @@ void main(List<String> args) {
   final eMaiorDeIdade = idade >= 18 ? true : false;
   print("É maior de idade? " + eMaiorDeIdade.toString());
 }
-
 ```
+* Switch
+
+```dart
+void main(List<String> args) {
+  final diaDaSemana = 0;
+
+  var diaDaSemanaStr = '';
+
+  switch (diaDaSemana) {
+    case 0:
+      diaDaSemanaStr = "Domingo";
+      break;
+    case 1:
+      diaDaSemanaStr = "Segunda - feira";
+      break;
+    case 2:
+      diaDaSemanaStr = "Terça - feira";
+      break;
+    default:
+      diaDaSemanaStr = "Não identificado";
+      break;
+  }
+
+  print(diaDaSemanaStr);
+}
+```
+
+## Tratamento de Nulos
+
+* Null Safety
+* Null Aware Operator
+* Conditional property access
+
+- Exemplo de Null Safety
+```dart
+String? nomeSuperior;
+
+void main(List<String> args) {
+  String nome = '';
+
+  String? nomeNula;
+
+  if (nomeNula != null) {
+    nomeNula.isEmpty;
+  }
+
+  nome.isEmpty;
+  var nomeLocal = nomeSuperior;
+  if (nomeLocal != null) {
+    nomeLocal.isEmpty;
+  }
+
+  nomeSuperior = '';
+  nomeSuperior!.isEmpty;
+}
+```
+- Exemplo Null Aware Operator
+```dart
+String? nome;
+void main(List<String> args) {
+  var sobrenome = 'Jr';
+  var nomeCompleto = (nome ?? 'Rodrigo') + sobrenome;
+
+  print(nomeCompleto);
+}
+```
+- Exemplo de Conditional Property Access
+```dart
+String? nomeCompleto;
+
+void main(List<String> args) {
+  // Null Aware operator
+  // var nomeCompletoLocal = nomeCompleto ?? 'Nome não preenchido';
+  // IF convencional
+  if (nomeCompleto != null) {
+    print(nomeCompleto!.toUpperCase());
+  }
+  // Conditional Property Access
+  print(nomeCompleto?.toUpperCase() ?? 'Nome não preenchido');
+}
+```
+
+
