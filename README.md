@@ -487,4 +487,120 @@ void main(List<String> args) {
   print(listaStrings);
 }
 ```
+### Loops
 
+- **FOR** e **FOR IN**
+```dart
+void main(List<String> args) {
+  var numeros = List.generate(10, ((index) => index));
+  var nomes = ['Rodrigo', 'Luiz', 'Gustavo', 'Teste'];
+
+  // for mais simples
+  for (var i = 0; i < numeros.length; i++) {
+    print(numeros[i]);
+  }
+
+  for (var i = 0; i < nomes.length; i++) {
+    print(nomes[i]);
+  }
+
+  // for mais bem implementado
+  for (var nome in nomes) {
+    print(nome);
+  }
+
+  for (var numero in numeros) {
+    print(numero);
+  }
+
+  // for com break
+  for (var i = 0; i < nomes.length; i++) {
+    if (nomes[i] == 'Luiz') {
+      break;
+    }
+    print(nomes[i]);
+  }
+
+  for (var nome in nomes) {
+    if (nome == 'Luiz') {
+      break;
+    }
+    print(nome);
+  }
+
+  // for com continue
+  for (var i = 0; i < nomes.length; i++) {
+    if (nomes[i] == 'Luiz') {
+      continue;
+    }
+    print(nomes[i]);
+  }
+
+  for (var nome in nomes) {
+    if (nome == 'Luiz') {
+      continue;
+    }
+    print(nome);
+  }
+}
+```
+
+- **Do While** e **While**
+
+```dart
+void main(List<String> args) {
+  //      inicio     condição       incremento
+  // for(var i = 0; i <nomes.length; i++)
+
+  var numero = 0;
+  print("While Convencional");
+
+  while (numero <= 10) {
+    print(numero);
+    numero++;
+  }
+
+  // DoWhile
+  var indice = 0;
+  while (indice > 0) {
+    print(indice);
+    indice++;
+  }
+
+  do {
+    print(indice);
+    //indice++;
+  } while (indice > 0);
+}
+```
+- **Iterables**
+
+```dart
+void main(List<String> args) {
+  var numeros = List.generate(10, ((index) => index));
+  numeros.where((numero) => numero != 5).forEach((numero) => print(numero));
+  final numerosAte6 = numeros
+      .takeWhile((numero) => numero < 7)
+      .where((numero) => numero != 5)
+      .toList();
+  print(numerosAte6);
+
+  final numerosRemoverAte5 = numeros.skipWhile((numero) => numero < 6).toList();
+  print(numerosRemoverAte5);
+
+  var nomes = ['Rodrigo', 'Guilherme', 'Arthur', 'Sandra', 'Marcos'];
+  var nomesSkip = nomes.skipWhile((nome) {
+    if (nome == 'Arthur') {
+      return true;
+    } else {
+      return false;
+    }
+  }).toList();
+  print(nomesSkip);
+
+  var numeroStrList = numeros.map((numero) {
+    return 'numero é $numero';
+  }).toList();
+  print(numeroStrList);
+}
+```
