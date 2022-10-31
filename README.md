@@ -62,12 +62,14 @@ adb
 
 * [Flutter](https://flutter.dev/) Site oficial do flutter
 
-*  Para a instalação siga os passos do **get started**
+* Para a instalação siga os passos do **get started**
 
 ```shell
 flutter --version
 ```
+
 Verifica se seu ambiente está tudo **OK!!!**
+
 ```shell
 flutter doctor
 ```
@@ -75,18 +77,25 @@ flutter doctor
 * Configurando o FVM
 
 * Use o comando abaixo para instalar o fvm
+
 ```shell
 choco install fvm
 ```
+
 * Use o comando abaixo para verificar as versões existentes do flutter
+
 ```shell
 fvm releases
 ```
+
 * Use o comando abaixo para instalar o flutter
+
 ```shell
 fvm global stable
 ```
+
 * Use o comando abaixo para instalar uma versão especifica
+
 ```shell
 fvm global 3.0.1
 ```
@@ -112,6 +121,7 @@ fvm global 3.0.1
   * analysis_options.yaml -> Configura o lint, os padrões de projeto.
 
 ### Variáveis
+
 * Exemplos de variaveis no dart
 
 ```dart
@@ -132,7 +142,9 @@ void main() {
   dynamicQualquer = 1.2;
 }
 ```
+
 * Uso do Null safety em flutter
+
 ```dart
 //Precisa ser inicializada ou usar o operador ? para permitir valores null
 // Variaveis de nivel superior não podem ser inicializadas depois
@@ -167,6 +179,7 @@ void main() {
   print(nomeCompleto.length);
 }
 ```
+
 ### Modificadores
 
 * **Final** e **Const**
@@ -194,6 +207,7 @@ void main(List<String> args) {
   //const nomeCompletoConst2 = nomeCompleto;
 }
 ```
+
 ### Condicionais e operadores relacionais
 
 * Operadores condicionais (**IF**,**ELSE**, **ELSE IF**)
@@ -209,6 +223,7 @@ void main(List<String> args) {
   }
 }
 ```
+
 ```dart
 void main(List<String> args) {
   // Operadores relacionais
@@ -236,6 +251,7 @@ void main(List<String> args) {
   }
 }
 ```
+
 ```dart
 void main(List<String> args) {
   // Operadores Lógicos
@@ -281,6 +297,7 @@ void main(List<String> args) {
   }
 }
 ```
+
 * Operadores Ternarios
 * Use com atenção, caso tenha que comentar escreva outro codigo mais simples.
 
@@ -299,6 +316,7 @@ void main(List<String> args) {
   print("É maior de idade? " + eMaiorDeIdade.toString());
 }
 ```
+
 * Switch
 
 ```dart
@@ -332,7 +350,8 @@ void main(List<String> args) {
 * Null Aware Operator
 * Conditional property access
 
-- Exemplo de Null Safety
+* Exemplo de Null Safety
+
 ```dart
 String? nomeSuperior;
 
@@ -355,7 +374,9 @@ void main(List<String> args) {
   nomeSuperior!.isEmpty;
 }
 ```
-- Exemplo Null Aware Operator
+
+* Exemplo Null Aware Operator
+
 ```dart
 String? nome;
 void main(List<String> args) {
@@ -365,7 +386,9 @@ void main(List<String> args) {
   print(nomeCompleto);
 }
 ```
-- Exemplo de Conditional Property Access
+
+* Exemplo de Conditional Property Access
+
 ```dart
 String? nomeCompleto;
 
@@ -380,6 +403,7 @@ void main(List<String> args) {
   print(nomeCompleto?.toUpperCase() ?? 'Nome não preenchido');
 }
 ```
+
 ### Listas
 
 ```dart
@@ -391,6 +415,7 @@ void main(List<String> args) {
   var listSemDados2 = <int>[];
 }
 ```
+
 ```dart
 void main(List<String> args) {
   // ? = Nullable (Aceita Nulo)
@@ -409,6 +434,7 @@ void main(List<String> args) {
   List<String?>? nomesInternosAceitaNulos1 = null;
 }
 ```
+
 ```dart
 void main(List<String> args) {
   final numeros = [1, 2, 3, 4];
@@ -487,9 +513,11 @@ void main(List<String> args) {
   print(listaStrings);
 }
 ```
+
 ### Loops
 
-- **FOR** e **FOR IN**
+* **FOR** e **FOR IN**
+
 ```dart
 void main(List<String> args) {
   var numeros = List.generate(10, ((index) => index));
@@ -545,7 +573,7 @@ void main(List<String> args) {
 }
 ```
 
-- **Do While** e **While**
+* **Do While** e **While**
 
 ```dart
 void main(List<String> args) {
@@ -573,7 +601,8 @@ void main(List<String> args) {
   } while (indice > 0);
 }
 ```
-- **Iterables**
+
+* **Iterables**
 
 ```dart
 void main(List<String> args) {
@@ -604,3 +633,12 @@ void main(List<String> args) {
   print(numeroStrList);
 }
 ```
+
+### Manipulação e conversão de Strings
+
+* Utilização de alguns metodos de **STRING** para ajustes e modificações.
+* Ex:
+  * **split**
+  * **toLowerCase**
+  * **toUpperCase**
+  * **substring**
