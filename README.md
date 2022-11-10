@@ -744,3 +744,210 @@ int soma(int num1, int num2) {
   return num1 + num2;
 }
 ```
+
+### Parametros
+
+```dart
+void main(List<String> args) {
+  // Parametros Obrigatorios por default
+  print("A soma de 10 + 10 ${somaInteiros(10, 10)}");
+  // Parametros Nomeados
+  // Parametros nomeados são nullables por default
+  // Parametros nomeados podem ser promovidos para non-null com checagem de null
+
+  print("A soma de 10.2 + 10.2 é ${somaDoubles(num1: 10.2, num2: 10.2)}");
+  print("A soma de 10.2 + 10.2 é ${somaDoubles(num2: 10.2, num1: 10.2)}");
+
+  print(
+      "A soma obrigatoria  de 10.2 + 10.2 é ${somaDoublesObrigatorios(num2: 10.2, num1: 10.2)}");
+  print(
+      "A soma obrigatoria  de 10.2 + 10.2 é ${somaDoublesObrigatorios2(num1: null, num2: 10.2)}");
+  print(
+      "A soma obrigatoria  de 10.2 + 10.2 é ${somaDoublesObrigatoriosdefault()}");
+
+  // Parametro opcional
+  somaInteirosOpcionais();
+  somaInteirosOpcionais(1);
+  somaInteirosOpcionais(1, 1);
+}
+
+int somaInteiros(int num1, int num2) {
+  return num1 + num2;
+}
+
+int somaInteirosOpcionais([int num1 = 0, int num2 = 0]) {
+  return num1 + num2;
+}
+
+double somaDoubles({double? num1, double? num2}) {
+  if (num1 != null && num2 != null) {
+    return num1 + num2;
+  }
+  return 0;
+}
+
+double somaDoublesObrigatorios({required double num1, required double num2}) {
+  return num1 + num2;
+}
+
+double somaDoublesObrigatorios2({required double? num1, required double num2}) {
+  num1 ??= 0;
+  return num1 + num2;
+}
+
+double somaDoublesObrigatoriosdefault({double num1 = 0, double num2 = 0}) {
+  return num1 + num2;
+}
+
+void parametrosNormaisComNomeados(int numero,
+    {required String nome, required int idade}) {}
+void parametrosNormaisComNomeados2(int numero, [String? nome, int? idade]) {}
+```
+
+### Funções Arrow, Funções Anonimas e Typedef
+
+```dart
+void main(List<String> args) {
+  // funções arrow
+  print(somaInteiros2(10, 10));
+
+  // funçoes anonimas
+  () {
+    print("funções Anonimas");
+  }(); //execucão
+
+  var funcaoQualquer = () {
+    print("Função Qualquer");
+  }; //Closure;
+  print(funcaoQualquer);
+  print(funcaoQualquer());
+
+  chamarUmaFuncaoDeUmParametro((nome) {
+    if (nome.isEmpty) {
+      print('Nome veio vazio');
+    } else {
+      print(nome);
+    }
+  });
+}
+
+// 3 Partes
+// 1 tipo de retorno
+// 2 Nome
+// 3 Parametros (normais, nomeados e opcionais)
+int somaInteiros(int num1, int num2) {
+  return num1 + num2;
+}
+
+int somaInteiros2(int num1, int num2) => num1 + num2;
+
+void chamarUmaFuncaoDeUmParametro(Function(String nome) funcaoQueRecebeNome) {
+  var calc = 1 + 1;
+  var nomeTeste = 'Luiz Jr';
+  funcaoQueRecebeNome(nomeTeste);
+}
+
+typedef funcaoQueRecebeNome = void Function(String nome);
+
+void chamarUmaFuncaoDeUmParametro2(funcaoQueRecebeNome funcaoQueRecebeNome) {
+  var calc = 1 + 1;
+  var nomeTeste = 'Luiz Jr';
+  funcaoQueRecebeNome(nomeTeste);
+}
+
+```
+
+### Listas parte2
+
+```dart
+void main(List<String> args) {
+  var numeros = List.generate(10, ((index) => index + 1));
+
+  numeros.forEach(print);
+
+  //Expand
+  // Array Bidimencioanl
+  var lista = [
+    [1, 2],
+    [3, 4],
+  ];
+  print(lista);
+
+  var listaNova = lista.expand((numeros) => numeros).toList();
+  print(listaNova);
+
+  // any
+  final listaBusca = ['Luiz', 'Rodrigo', 'Joao'];
+
+  if (listaBusca.any((element) => element == 'Joao')) {
+    print("Joao está na lista");
+  } else {
+    print('Joao não está na lista');
+  }
+
+  //every
+  final listaBusca2 = ['Luiz', 'Rodrigo', 'Joao'];
+  if (listaBusca2.every((element) => element.contains("J"))) {
+    print("Todos os nomes tem a letra J");
+  } else {
+    print("Nem todos os nomes tem a letra J");
+  }
+
+  //Sort
+  final listaParaOrdenacao = [99, 22, 10, 765, 1, 2, 3, 100, 300, 1000];
+  listaParaOrdenacao.sort();
+  print(listaParaOrdenacao);
+
+  final listaParaOrdenacao2 = ['Luiz', 'Rodrigo', 'Joao'];
+  listaParaOrdenacao2.sort();
+  print(listaParaOrdenacao2);
+
+  final pacientes = [
+    'Luiz Jr | 27',
+    'Suzana | 35',
+    'Testes | 10',
+    'Bolsonaro | 1000'
+  ];
+  pacientes.sort();
+  //print(pacientes);
+
+  pacientes.sort((paciente1, paciente2) {
+    final pacienteDados1 = paciente1.split("|");
+    final pacienteDados2 = paciente2.split("|");
+
+    final idadePaciente1 = int.parse(pacienteDados1[1]);
+    final idadePaciente2 = int.parse(pacienteDados2[1]);
+
+    if (idadePaciente1 > idadePaciente2) {
+      return 1;
+    } else if (idadePaciente1 == idadePaciente2) {
+      return 0;
+    } else {
+      return -1;
+    }
+  });
+  print(pacientes);
+
+  //compare to
+
+  final pacientes2 = [
+    'Luiz Jr | 27',
+    'Suzana | 35',
+    'Testes | 10',
+    'Bolsonaro | 1000'
+  ];
+  pacientes2.sort();
+  //print(pacientes2);
+
+  pacientes2.sort((paciente1, paciente2) {
+    final pacienteDados1 = paciente1.split("|");
+    final pacienteDados2 = paciente2.split("|");
+
+    final idadePaciente1 = int.parse(pacienteDados1[1]);
+    final idadePaciente2 = int.parse(pacienteDados2[1]);
+
+    return idadePaciente1.compareTo(idadePaciente2);
+  });
+  print(pacientes2);
+}
+```
