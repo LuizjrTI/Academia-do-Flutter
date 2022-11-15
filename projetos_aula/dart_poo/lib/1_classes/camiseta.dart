@@ -2,12 +2,23 @@
  *  Atributos 
  *  Comportamentos
  * 
+ * 
+ *  Modificadores de acesso
+ *  - public
+ *  - private
+ * 
  */
 
 class Camiseta {
   String? tamanho;
-  String? cor;
+  String? _cor; // atibuto privado
   String? marca;
+
+  //Atributo de Classe
+  static const String nome = 'camiseta';
+
+  //Metodo de classe
+  static String recuperarNome() => nome;
 
   String tipoDeLavagem() {
     if (marca == 'Nike') {
