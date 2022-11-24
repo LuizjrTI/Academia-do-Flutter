@@ -11,7 +11,8 @@
 
 class Camiseta {
   String? tamanho;
-  String? _cor; // atibuto privado
+  //String? _cor; // atibuto privado
+  String? cor; // atibuto publico
   String? marca;
 
   //Atributo de Classe
